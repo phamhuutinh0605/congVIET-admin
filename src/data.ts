@@ -105,7 +105,7 @@ export const chartBoxUser = {
   color: "#8884d8",
   icon: "/userIcon.svg",
   title: "Total Users",
-  number: "11.238",
+  number: "10.000",
   dataKey: "users",
   percentage: 45,
   chartData: [
@@ -122,7 +122,7 @@ export const chartBoxUser = {
 export const chartBoxProduct = {
   color: "skyblue",
   icon: "/productIcon.svg",
-  title: "Total Products",
+  title: "Total Gigs",
   number: "238",
   dataKey: "products",
   percentage: 21,

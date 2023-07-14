@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const upload = async (file) => {
+const upload = async (file: any) => {
   const data = new FormData();
   data.append("file", file);
   data.append("upload_preset", "congVIET");

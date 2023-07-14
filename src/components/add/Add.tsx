@@ -1,7 +1,7 @@
 import { GridColDef } from "@mui/x-data-grid";
 import "./add.scss";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { ChangeEventHandler, useState } from "react";
+import { useState } from "react";
 import newRequest from "../../utils/newRequest";
 import { ToastContainer, toast } from "react-toastify";
 

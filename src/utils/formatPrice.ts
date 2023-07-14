@@ -1,4 +1,4 @@
-export const formatPrice = (price) => {
+export const formatPrice = (price: string) => {
   const amountNumber = parseInt(price); // Chuyển đổi chuỗi thành số nguyên
   const formattedAmount = amountNumber.toLocaleString("vi-VN", {
     style: "currency",
