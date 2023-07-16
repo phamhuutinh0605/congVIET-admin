@@ -27,12 +27,12 @@ const columns: GridColDef[] = [
     headerName: "Email",
     width: 150,
   },
-  // {
-  //   field: "password",
-  //   type: "string",
-  //   headerName: "Password",
-  //   width: 200,
-  // },
+  {
+    field: "password",
+    type: "string",
+    headerName: "Password",
+    width: 200,
+  },
   {
     field: "country",
     type: "string",
@@ -46,14 +46,20 @@ const columns: GridColDef[] = [
     width: 150,
   },
   {
+    field: "linkedIn",
+    type: "string",
+    headerName: "Linked In",
+    width: 150,
+  },
+  {
     field: "createdAt",
     headerName: "Created At",
     width: 200,
     type: "string",
   },
   {
-    field: "verified",
-    headerName: "Verified",
+    field: "isSeller",
+    headerName: "Seller",
     width: 100,
     type: "boolean",
   },

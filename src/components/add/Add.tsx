@@ -16,6 +16,7 @@ const Add = (props: Props) => {
   const token = JSON.parse(
     localStorage.getItem("currentUser") as string
   )?.token;
+  const [formValues, setFormValues] = useState({});
 
   const mutation = useMutation({
     mutationFn: () => {
@@ -29,7 +30,7 @@ const Add = (props: Props) => {
       }
     },
     onSuccess: () => {
-      queryClient.invalidateQueries([`all${props.slug}s`]);
+      queryClient.invalidateQueries([`${props.slug}`]);
     },
     onError: (error) => {
       console.log(error);
@@ -46,8 +47,6 @@ const Add = (props: Props) => {
     mutation.mutate();
     props.setOpen(false);
   };
-
-  const [formValues, setFormValues] = useState({});
 
   const handleChange = (event: any) => {
     const { name, value } = event.target;
