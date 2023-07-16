@@ -4,6 +4,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useState } from "react";
 import newRequest from "../../utils/newRequest";
 import { ToastContainer, toast } from "react-toastify";
+import upload from "../../utils/upload";
 
 type Props = {
   slug: string;
@@ -65,7 +66,7 @@ const Add = (props: Props) => {
         <h1>Thêm Người Dùng Mới</h1>
         <form onSubmit={handleSubmit}>
           {props.columns
-            .filter((item) => item.field !== "id" && item.field !== "img")
+            .filter((item) => item.field !== "id"&&item.field !=="createdAt")
             .map((column) => (
               <div className="item" key={column.field}>
                 <label>{column.headerName}</label>

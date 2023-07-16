@@ -66,6 +66,7 @@ const Orders = () => {
         return res.data;
       }),
   });
+  console.log(data)
   return (
     <div className="products">
       <div className="info">

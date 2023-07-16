@@ -10,7 +10,7 @@ const columns: GridColDef[] = [
   {
     field: "img",
     headerName: "Avatar",
-    width: 100,
+    width: 50,
     renderCell: (params) => {
       return <img src={params.row.img || "/noavatar.png"} alt="" />;
     },
@@ -31,13 +31,13 @@ const columns: GridColDef[] = [
     field: "password",
     type: "string",
     headerName: "Password",
-    width: 200,
+    width: 100,
   },
   {
     field: "country",
     type: "string",
     headerName: "Country",
-    width: 200,
+    width: 150,
   },
   {
     field: "phone",
