@@ -1,3 +1,5 @@
+const currentUserId = JSON.parse(localStorage.getItem("currentUser") as string)
+  ?.user?._id;
 export const menu = [
   {
     id: 1,
@@ -12,7 +14,7 @@ export const menu = [
       {
         id: 2,
         title: "Profile",
-        url: "/users/1",
+        url: `/users/${currentUserId}`,
         icon: "user.svg",
       },
     ],
@@ -30,7 +32,7 @@ export const menu = [
       {
         id: 2,
         title: "Gigs",
-        url: "/products",
+        url: "/gigs",
         icon: "product.svg",
       },
       {

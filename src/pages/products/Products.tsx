@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./Products.scss";
 import DataTable from "../../components/dataTable/DataTable";
 import Add from "../../components/add/Add";
@@ -6,7 +6,7 @@ import { GridColDef } from "@mui/x-data-grid";
 import { useQuery } from "@tanstack/react-query";
 import newRequest from "../../utils/newRequest";
 const columns: GridColDef[] = [
-  // { field: "_id", headerName: "ID", width: 90 },
+  { field: "userId", headerName: "UserId", width: 230 },
   {
     field: "img",
     headerName: "Image",
@@ -25,7 +25,7 @@ const columns: GridColDef[] = [
     field: "desc",
     type: "string",
     headerName: "Description",
-    width: 300,
+    width: 200,
   },
   {
     field: "cat",
@@ -45,12 +45,6 @@ const columns: GridColDef[] = [
     width: 200,
     type: "string",
   },
-  {
-    field: "Verify",
-    headerName: "Verify",
-    width: 100,
-    type: "boolean",
-  },
 ];
 
 const Products = () => {
@@ -59,14 +53,16 @@ const Products = () => {
     localStorage.getItem("currentUser") as string
   )?.token;
 
-  const { isLoading, data } = useQuery({
-    queryKey: ["allproducts"],
+  const { isLoading, data, refetch } = useQuery({
+    queryKey: ["gigs"],
     queryFn: () =>
       newRequest.get(`/gigs?accessToken=${token}`).then((res: any) => {
         return res.data;
       }),
   });
-
+  useEffect(() => {
+    refetch();
+  }, []);
   return (
     <div className="products">
       <div className="info">

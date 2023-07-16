@@ -48,7 +48,7 @@ function App() {
           element: <Users />,
         },
         {
-          path: "/products",
+          path: "/gigs",
           element: <Products />,
         },
         {
@@ -60,7 +60,7 @@ function App() {
           element: <User />,
         },
         {
-          path: "/products/:id",
+          path: "/gigs/:id",
           element: <Product />,
         },
         {

@@ -25,14 +25,14 @@ const columns: GridColDef[] = [
     field: "email",
     type: "string",
     headerName: "Email",
-    width: 200,
+    width: 150,
   },
-  {
-    field: "password",
-    type: "string",
-    headerName: "Password",
-    width: 200,
-  },
+  // {
+  //   field: "password",
+  //   type: "string",
+  //   headerName: "Password",
+  //   width: 200,
+  // },
   {
     field: "country",
     type: "string",
@@ -43,20 +43,20 @@ const columns: GridColDef[] = [
     field: "phone",
     type: "string",
     headerName: "Phone",
-    width: 200,
+    width: 150,
   },
-  // {
-  //   field: "createdAt",
-  //   headerName: "Created At",
-  //   width: 200,
-  //   type: "string",
-  // },
-  // {
-  //   field: "verified",
-  //   headerName: "Verified",
-  //   width: 150,
-  //   type: "boolean",
-  // },
+  {
+    field: "createdAt",
+    headerName: "Created At",
+    width: 200,
+    type: "string",
+  },
+  {
+    field: "verified",
+    headerName: "Verified",
+    width: 100,
+    type: "boolean",
+  },
 ];
 
 const Users = () => {

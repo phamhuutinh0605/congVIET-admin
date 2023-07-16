@@ -14,6 +14,13 @@ import {
 import "./home.scss";
 
 const Home = () => {
+  // Trích xuất query parameter từ URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const data = urlParams.get("data");
+  // Kiểm tra và lưu dữ liệu vào localStorage
+  if (data) {
+    localStorage.setItem("currentUser", data);
+  }
   return (
     <div className="home">
       <div className="box box1">

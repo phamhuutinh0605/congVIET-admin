@@ -20,7 +20,7 @@ const DataTable = (props: Props) => {
       return newRequest.delete(`/${props.slug}/${id}?accessToken=${token}`);
     },
     onSuccess: () => {
-      queryClient.invalidateQueries([`all${props.slug}`]);
+      queryClient.invalidateQueries([`${props.slug}`]);
     },
     onError: (err: any) => {
       console.log(err);
@@ -38,9 +38,8 @@ const DataTable = (props: Props) => {
     headerName: "Action",
     width: 200,
     renderCell: (params) => {
-      console.log(params.row._id);
       return (
-        <div className="action">
+        <div className="action" key={params.row._id}>
           <Link to={`/${props.slug}/${params.row._id}`}>
             <img src="/view.svg" alt="" />
           </Link>
