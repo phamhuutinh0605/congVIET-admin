@@ -58,11 +58,10 @@ const Orders = () => {
   const token = JSON.parse(
     localStorage.getItem("currentUser") as string
   )?.token;
-
   const { isLoading, data } = useQuery({
     queryKey: ["allorders"],
     queryFn: () =>
-      newRequest.get(`/orders?accessToken=${token}`).then((res: any) => {
+      newRequest(`/orders?accessToken=${token}`).then((res: any) => {
         return res.data;
       }),
   });
@@ -70,7 +69,7 @@ const Orders = () => {
   return (
     <div className="products">
       <div className="info">
-        <h1>Products</h1>
+        <h1>Orders</h1>
         <button onClick={() => setOpen(true)}>Add New Orders</button>
       </div>
 
